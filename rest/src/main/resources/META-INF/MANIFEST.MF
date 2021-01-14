@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: rest-service
+Implementation-Version: 1.0.3-SNAPSHOT
+Start-Class: com.example.restservice.Main
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Build-Jdk-Spec: 1.8
+Spring-Boot-Version: 2.2.7.RELEASE
+Created-By: Comviva
+Main-Class: com.example.restservice.Main

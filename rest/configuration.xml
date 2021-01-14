@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <instance>1</instance>
+	<monitoring>
+		<disabled>false</disabled>
+		<ttl>300</ttl>
+		<period_in_seconds>30</period_in_seconds>
+		<write_status_to_file>true</write_status_to_file>
+		<url_to_post_status>http://127.0.0.1:10101/mgms-agent/samples</url_to_post_status>
+		<product>REPLACE_VNFI</product>
+		<productInstance>REPLACE_VNFC_GROUP</productInstance>
+		<component>REPLACE_VNFC</component>
+		<componentInstance>REPLACE_VNFC-REPLACE_INSTANCE_NUMBER</componentInstance>
+		<connectionTimeoutInSeconds>10</connectionTimeoutInSeconds>
+		<readTimeoutInSeconds>10</readTimeoutInSeconds>
+		<failAttemps>3</failAttemps>
+		<delayBetweenFailAttempsInMilliseconds>3000</delayBetweenFailAttempsInMilliseconds>
+		
+		<!-- Configuracion BAM -->
+		<bam_report_path_file>/mnt/mcom/bam/httpsender/files/in</bam_report_path_file>
+		<bamParameters>
+			<disabledSendReport>false</disabledSendReport>
+			<bamVersion>2</bamVersion><!-- Va hardcodeado por ahora en el frontend, lo parametrizo para el dia que tenga funcionalidad -->
+			<bamVar1></bamVar1>       <!-- Parametros de Configuracion para BAM -->
+			<bamVar2></bamVar2>
+			<bamVar3></bamVar3>
+			<bamVar4></bamVar4>
+			<bamGroup></bamGroup>       <!-- Agrupado del lado de BAM-->
+		</bamParameters>
+		<siteName>SiteName</siteName>
+		<serverName>ServerName</serverName>
+
+		<kpiMgmsExclude>
+			<excludes>
+			</excludes>
+		</kpiMgmsExclude>
+		<kpiBamExclude>
+			<excludes>
+			</excludes>
+		</kpiBamExclude>
+		<kpiStatusThreshold>
+			<kpiStatus>
+				<name>CreatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>10</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 20% check logs</descriptionOnMatch>
+			</kpiStatus>			
+			<kpiStatus>
+				<name>CreatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>20</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 40% check logs</descriptionOnMatch>
+			</kpiStatus>		
+			<kpiStatus>
+				<name>CreatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>30</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 60% check logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>CreatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>50</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 80% check logs</descriptionOnMatch>
+			</kpiStatus>
+			
+			<kpiStatus>
+				<name>CreatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>10</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 20%, check your logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>CreatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>10</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 40%, check your logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>CreatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>15</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 60%, check your logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>CreatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>20</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 80%, check your logs</descriptionOnMatch>
+			</kpiStatus>			
+			
+			<kpiStatus>
+				<name>CreatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1000</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 20% check logs</descriptionOnMatch>
+			</kpiStatus>			
+			<kpiStatus>
+				<name>CreatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1500</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 40% check logs</descriptionOnMatch>
+			</kpiStatus>		
+			<kpiStatus>
+				<name>CreatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>2000</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 60% check logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>CreatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>3000</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 80% check logs</descriptionOnMatch>
+			</kpiStatus>
+			
+			<kpiStatus>
+				<name>CreatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1000</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 20% check logs</descriptionOnMatch>
+			</kpiStatus>			
+			<kpiStatus>
+				<name>CreatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1500</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 40% check logs</descriptionOnMatch>
+			</kpiStatus>		
+			<kpiStatus>
+				<name>CreatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>2000</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 60% check logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>CreatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>3000</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 80% check logs</descriptionOnMatch>
+			</kpiStatus>
+			
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>10</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 20% check logs</descriptionOnMatch>
+			</kpiStatus>			
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>20</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 40% check logs</descriptionOnMatch>
+			</kpiStatus>		
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>30</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 60% check logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.ERROR.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>50</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Request with Error is greater than 80% check logs</descriptionOnMatch>
+			</kpiStatus>
+			
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>10</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 20%, check your logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>10</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 20%, check your logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>15</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 20%, check your logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.TimeOut.Count</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>20</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Count Timeout Request is greater than 20%, check your logs</descriptionOnMatch>
+			</kpiStatus>			
+			
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1000</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 20% check logs</descriptionOnMatch>
+			</kpiStatus>			
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1500</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 40% check logs</descriptionOnMatch>
+			</kpiStatus>		
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>2000</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 60% check logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.Total.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>3000</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Total AvgTime Request is greater than 80% check logs</descriptionOnMatch>
+			</kpiStatus>
+			
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1000</value> <!-- BigDecimal -->
+				<status>WARNING</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 20% check logs</descriptionOnMatch>
+			</kpiStatus>			
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>1500</value> <!-- BigDecimal -->
+				<status>MINOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 40% check logs</descriptionOnMatch>
+			</kpiStatus>		
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>2000</value> <!-- BigDecimal -->
+				<status>MAJOR</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 60% check logs</descriptionOnMatch>
+			</kpiStatus>
+			<kpiStatus>
+				<name>ActivatePrepaidRSA.OK.AvgTime</name>
+				<!-- eq, gt, lt, get, let -->
+				<comparison>GT</comparison>
+				<value>3000</value> <!-- BigDecimal -->
+				<status>CRITICAL</status> <!-- ERROR, WARN, OK -->
+				<descriptionOnMatch>Request OK is greater than 80% check logs</descriptionOnMatch>
+			</kpiStatus>			
+		</kpiStatusThreshold>		
+	</monitoring>
+</configuration>

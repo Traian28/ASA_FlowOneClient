@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <instance>0</instance>
+	<monitoring>
+		<disabled>false</disabled>
+		<ttl>300</ttl>
+		<period_in_seconds>20</period_in_seconds>
+		<write_status_to_file>true</write_status_to_file>
+		<url_to_post_status>http://127.0.0.1:10101/mgms-agent/samples</url_to_post_status>
+		<product>REPLACE_VNFI</product>
+		<productInstance>REPLACE_VNFC_GROUP</productInstance>
+		<component>REPLACE_VNFC</component>
+		<componentInstance>REPLACE_VNFC-REPLACE_INSTANCE_NUMBER</componentInstance>
+		<connectionTimeoutInSeconds>10</connectionTimeoutInSeconds>
+		<readTimeoutInSeconds>10</readTimeoutInSeconds>
+		<failAttemps>3</failAttemps>
+		<delayBetweenFailAttempsInMilliseconds>3000</delayBetweenFailAttempsInMilliseconds>
+	</monitoring>
+</configuration>
